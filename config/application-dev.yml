@@ -1,0 +1,16 @@
+server:
+  port: 8080
+  context-path: /spring-grpc
+spring:
+  application:
+    name: spring-grpc
+grpc:
+  server:
+    host: localhost
+    port: 9080
+  client:
+    local-grpc-server:
+      host: localhost
+      port: 9080   
+logging:
+  file: ./target/spring-grpc.log

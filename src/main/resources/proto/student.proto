@@ -1,0 +1,25 @@
+syntax = "proto3";
+option java_package = "com.jin.grpc";
+
+message GrpcStudent {
+	oneof value_oneof {
+		int64 id = 1;
+	}
+	string firstName = 2;
+	string lastName = 3;
+	int32 age = 4;
+
+}
+
+message AddStudentRequest{
+  GrpcStudent student = 1;
+}
+
+message AddStudentResponse{
+  bool result = 1;
+  GrpcStudent student = 2;
+}
+
+service StudentGrpcService {
+  rpc addStudent(AddStudentRequest) returns (AddStudentResponse);
+}
